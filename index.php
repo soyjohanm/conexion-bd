@@ -37,7 +37,9 @@
 
   if (conectar()) {
     echo "Se ha establecido la conexión con la base de datos.<br>";
-    $sql = "SELECT * FROM productos";
-    
+    $productos = query("SELECT * FROM productos");
+    foreach ($productos as $producto) {
+      echo $producto['nombre'].".<br>";
+    }
   }
 ?>
